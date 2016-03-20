@@ -12,6 +12,7 @@
   "devDependencies": {
     "amazeui-react": "^1.0.1",
     "babel-loader": "^6.2.4",
+    "babel-plugin-transform-regenerator": "^6.6.5",
     "babel-plugin-transform-runtime": "^6.6.0",
     "history": "^2.0.1",
     "react": "^0.14.7",

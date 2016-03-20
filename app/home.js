@@ -13,14 +13,19 @@ class Home extends React.Component{
 	componentWillMount(){
 		let that = this;
 		let process = new Process({
-			"url":"http://www.myflfw.com/law/App/homeMa/AppHomeImg.action",
-			options:{
-				"name":"lunbo",
-				"callback":"1"
-			},
+			"url":[
+				"http://www.myflfw.com/law/App/homeMa/AppHomeImg.action",
+				"http://www.myflfw.com/law/App/homeMa/AppHomeImg.action"
+			],
+			options:[
+				"name=lunbo&callback=1",
+				"name=lunbo&callback=1"
+			],
 			headers:{},
 			callback:function(data){
-				data = JSON.parse(data.slice(0,-1).slice("lunbo".length+1));
+				//单条请求的  JSON.parse(data.slice(0,-1).slice("lunbo("));
+				var data = data.split("lunbo").slice(1);//多次请求合并的 先分割
+				data = JSON.parse(data[0].slice(1,-2));//多次请求合并的 对应需求下标执行格式化
 				that.setState({
 					lunbo: data
 				});

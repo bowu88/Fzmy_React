@@ -21,7 +21,13 @@ module.exports = {
         { 
         	test: /\.js|jsx$/,exclude: /node_modules/, 
         	loader: ['babel'],
-        	query: {presets: ['es2015', 'react']},
+        	query: {
+                presets: ['es2015', 'react'],
+                babelrc: false,
+                plugins: [
+                    'transform-runtime',
+                ]
+            },
         }
     ]
  },
