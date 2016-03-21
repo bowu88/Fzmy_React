@@ -18,7 +18,7 @@ export default class Process{
 			return;
 		}
 		let _callback = this.callback;
-		fetch("http://127.0.0.1:8081?link="+this.url+"&"+this.params,{
+		fetch("http://127.0.0.1:8081?link="+this.url+(this.method=="POST"?"":"&"+this.params),{
 			"mode":"cors",
 			headers:this.headers,
 			body : this.method == "POST"?this.body:null,
