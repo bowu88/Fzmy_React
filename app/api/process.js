@@ -11,6 +11,7 @@ export default class Process{
 		this.callback = params.callback;
 		this.params = qs.stringify(params.options);
 		this.headers  = params.headers;
+		this.body =qs.stringify(params.options);
 	}
 	push(){
 		if(!(this.url|| this.callback)){
